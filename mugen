@@ -1,0 +1,17 @@
+local oldWait = wait
+local oldTaskWait = task.wait
+
+-- デバッグ用 最大クールタイム（ここを変えれば調整できる）
+local maxCooldown = 1 -- 秒
+
+-- wait の上書き
+function wait(t)
+    return oldWait(math.min(t or 0, maxCooldown))
+end
+
+-- task.wait の上書き
+task.wait = function(t)
+    return oldTaskWait(math.min(t or 0, maxCooldown))
+end
+
+print("⚡ デバッグモード: 全ての wait()/task.wait() を最大 " .. maxCooldown .. " 秒に短縮中")
