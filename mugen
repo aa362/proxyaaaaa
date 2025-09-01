@@ -8,7 +8,7 @@ while true do
     if target and target.Character and target.Character:FindFirstChild("HumanoidRootPart") then
         local hrp = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
         if hrp then
-            hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 3, 0)
+            hrp.CFrame = target.Character.HumanoidRootPart.CFrame + Vector3.new(0, 0, 0)
         end
     end
     task.wait(0.5) -- 0.5秒ごとに追従（負荷を下げたいなら1秒くらいでもOK）
