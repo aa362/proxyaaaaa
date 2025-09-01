@@ -2,7 +2,7 @@ local oldWait = wait
 local oldTaskWait = task.wait
 
 -- デバッグ用 最大クールタイム（ここを変えれば調整できる）
-local maxCooldown = 1 -- 秒
+local maxCooldown = 0.1 -- 秒
 
 -- wait の上書き
 function wait(t)
